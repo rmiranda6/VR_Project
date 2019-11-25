@@ -7,16 +7,20 @@ public class impossibleSpaceController : MonoBehaviour
 
     public GameObject thePlayer;
     public GameObject anteroom;
-    public GameObject room0, room1, room2;
+    public GameObject room0, room1, room2, room3, room4, room5, end;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //anteroom.SetActive(true);
+        anteroom.SetActive(true);
         room0.SetActive(false);
         room1.SetActive(false);
         room2.SetActive(false);
+        room3.SetActive(false);
+        room4.SetActive(false);
+        room5.SetActive(false);
+        end.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,34 +38,80 @@ public class impossibleSpaceController : MonoBehaviour
 
             if (anteroom.activeInHierarchy) {
 
-                room0.SetActive(true);
                 anteroom.SetActive(false);
+                room0.SetActive(true);                
                 room1.SetActive(false);
                 room2.SetActive(false);
+                room3.SetActive(false);
+                room4.SetActive(false);
+                room5.SetActive(false);
+                end.SetActive(false);
 
             } else if (room0.activeInHierarchy) {
 
-
-                room1.SetActive(true);
                 anteroom.SetActive(false);
                 room0.SetActive(false);
+                room1.SetActive(true);
                 room2.SetActive(false);
-
+                room3.SetActive(false);
+                room4.SetActive(false);
+                room5.SetActive(false);
+                end.SetActive(false);
             }
             else if (room1.activeInHierarchy)
             {
-                room2.SetActive(true);
-                room1.SetActive(false);
                 anteroom.SetActive(false);
                 room0.SetActive(false);
-
+                room2.SetActive(true);
+                room1.SetActive(false);
+                room3.SetActive(false);
+                room4.SetActive(false);
+                room5.SetActive(false);
+                end.SetActive(false);
             }
             else if (room2.activeInHierarchy)
             {
-                room1.SetActive(true);
+                anteroom.SetActive(false);
+                room0.SetActive(false);
                 room2.SetActive(false);
-
-
+                room1.SetActive(false);
+                room3.SetActive(true);
+                room4.SetActive(false);
+                room5.SetActive(false);
+                end.SetActive(false);
+            }
+            else if (room3.activeInHierarchy)
+            {
+                anteroom.SetActive(false);
+                room0.SetActive(false);
+                room2.SetActive(false);
+                room1.SetActive(false);
+                room3.SetActive(false);
+                room4.SetActive(true);
+                room5.SetActive(false);
+                end.SetActive(false);
+            }
+            else if (room4.activeInHierarchy)
+            {
+                anteroom.SetActive(false);
+                room0.SetActive(false);
+                room2.SetActive(false);
+                room1.SetActive(false);
+                room3.SetActive(false);
+                room4.SetActive(false);
+                room5.SetActive(true);
+                end.SetActive(false);
+            }
+            else if (room5.activeInHierarchy)
+            {
+                anteroom.SetActive(false);
+                room0.SetActive(false);
+                room2.SetActive(false);
+                room1.SetActive(false);
+                room3.SetActive(false);
+                room4.SetActive(false);
+                room5.SetActive(false);
+                end.SetActive(true);
             }
 
 
