@@ -9,6 +9,9 @@ public class impossibleSpaceController : MonoBehaviour
     public GameObject anteroom;
     public GameObject room0, room1, room2, room3, room4, room5, end;
 
+    public GameObject pointLightH;
+    public AudioSource ring, laugh;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,9 @@ public class impossibleSpaceController : MonoBehaviour
         room4.SetActive(false);
         room5.SetActive(false);
         end.SetActive(false);
+        pointLightH.SetActive(false);
+        ring.GetComponent<AudioSource>();
+        laugh.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -120,11 +126,27 @@ public class impossibleSpaceController : MonoBehaviour
             Debug.Log("Do something here");
         }
 
-        //Check for a match with the specific tag on any GameObject that collides with your GameObject
-        if (collision.gameObject.tag == "MyGameObjectTag")
+            //Check for a match with the specific tag on any GameObject that collides with your GameObject
+            if (collision.gameObject.tag == "MyGameObjectTag")
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("Do something else here");
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "triggerLight")
+        {
+            pointLightH.SetActive(true);
+        }
+        if (other.gameObject.name == "triggerRing")
+        {
+            ring.Play();
+        }
+        if(other.gameObject.name == "triggerLaugh")
+        {
+            laugh.Play();
         }
     }
 
